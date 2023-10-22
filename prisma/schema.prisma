@@ -8,27 +8,32 @@ generator client {
 }
 
 model User {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
-  email    String  @unique
-  password String
-  name     String
-  image    String?
+  id            String  @id @default(auto()) @map("_id") @db.ObjectId
+  email         String  @unique
+  password      String
+  name          String
+  image         String?
   emailVerified Boolean @default(false)
-  months   Month[]
+  months        Month[]
 }
 
 model Month {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  monthName String
-  year      Int
-  currency  String   @default("USD")
-  userId    String   @db.ObjectId
-  user      User     @relation(fields: [userId], references: [id])
-  budgets   Budget[]
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  slug         String   @unique
+  monthName    String
+  year         Int
+  currency     String   @default("$")
+  userId       String   @db.ObjectId
+  income       Float
+  expenseLimit Float
+  user         User     @relation(fields: [userId], references: [id])
+  budgets      Budget[]
+  current      Boolean  @default(false)
 }
 
 model Budget {
   id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  slug     String    @unique
   name     String
   amount   Float
   monthId  String    @db.ObjectId
@@ -37,9 +42,10 @@ model Budget {
 }
 
 model Expense {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  name     String
-  amount   Float
-  budgetId String @db.ObjectId
-  budget   Budget @relation(fields: [budgetId], references: [id])
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  amount    Float
+  budgetId  String   @db.ObjectId
+  budget    Budget   @relation(fields: [budgetId], references: [id])
+  createdAt DateTime @default(now())
 }

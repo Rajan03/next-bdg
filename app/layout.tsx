@@ -1,32 +1,31 @@
-import './globals.css'
-import { Providers } from '@/providers'
-import {Navbar} from "@/components";
+import {ModalRegistry, Navbar} from "@/components";
 import React from "react";
-import {ModalRegistry} from "@components/modals";
+import './globals.css'
+import {Providers} from "@/providers";
 
 export const metadata = {
-  title: 'App Name',
-  description: 'Track your budgets and expenses with this app'
+    title: 'App',
+    description: 'Track your budgets and expenses with this app'
 }
 
 export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode
+                                       children
+                                   }: {
+    children: React.ReactNode
 }) {
-  return (
-    <html lang="en">
-      <body className={'bg-gray-50'}>
+    return (
+        <html lang="en">
+        <body className={'bg-gray-50'}>
         <Providers>
-            <Navbar />
-            <ModalRegistry />
-            <main className={'container mx-auto px-6 pt-20'}>
+            <Navbar/>
+            <ModalRegistry/>
+            <main className={'h-screen container mx-auto px-6 pt-20'}>
                 {children}
             </main>
         </Providers>
-      </body>
-    </html>
-  )
+        </body>
+        </html>
+    )
 }
 
 /*

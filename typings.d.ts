@@ -5,3 +5,5 @@ interface SessionUser {
     image: string;
     emailVerified: Date | null;
 }
+
+interface LabelValue { label: string, value: number }

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/next-auth-with-prisma-main.iml" filepath="$PROJECT_DIR$/.idea/next-auth-with-prisma-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/next-bdg.iml" filepath="$PROJECT_DIR$/.idea/next-bdg.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="de30bf5b-6be8-4d72-8896-408db581c90e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/account/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/expenses/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/actions/AddExpenseAction.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/actions/LoginAction.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/actions/SignOutAction.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cards/budget-card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cards/expense-card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cards/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/modals/AddExpenseModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/modals/LoginModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/store-populator/active-month.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/store-populator/budgets.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/store-populator/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/context/store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/constants.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/account/budget-list.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/account/expenses-list.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/expenses/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/next-auth-with-prisma-main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/budgets/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/budgets/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/months/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/months/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/budgets/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/expenses/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/months/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sign-in/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/actions/AddMonthAction.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/actions/AddMonthAction.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/actions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/actions/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/modals/AddMonthModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/AddMonthModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/modals/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/context/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/context/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/context/modals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/context/modals.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/authOptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/authOptions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/months/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/months/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/typings.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typings.d.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2WcsFcm7G6CXhR0yVb3bvosXoqz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showScratchesAndConsoles" value="false" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/rajan/extra/next-bdg/components/actions&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/rajan/extra/next-bdg/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components/actions" />
+      <recent name="$PROJECT_DIR$/components/modals" />
+      <recent name="$PROJECT_DIR$/app/api/expenses" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="de30bf5b-6be8-4d72-8896-408db581c90e" name="Changes" comment="" />
+      <created>1697043099998</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697043099998</updated>
+      <workItem from="1697043101144" duration="146000" />
+      <workItem from="1697043253805" duration="1601000" />
+      <workItem from="1697622573732" duration="333000" />
+      <workItem from="1697626190642" duration="7367000" />
+      <workItem from="1697635891641" duration="3433000" />
+      <workItem from="1697987292815" duration="4517000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

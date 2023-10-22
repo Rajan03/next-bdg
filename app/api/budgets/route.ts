@@ -1,29 +1,39 @@
-import {getServerSession} from "next-auth/next";
-import {authOptions} from "@/app/api/auth/[...nextauth]/route";
-import {NextResponse} from "next/server";
-
-export async function GET(request: Request) {
-    const session = await getServerSession(authOptions)
-
-    if (!session) {
-        return new NextResponse(JSON.stringify({ error: 'unauthorized' }), {
-            status: 401
-        })
-    }
-
-    console.log('GET API', session)
-    return NextResponse.json({ authenticated: !!session })
-}
+import { authOptions } from "@/lib/authOptions";
+import { prisma } from "@/lib/prisma";
+import { getServerSession } from "next-auth/next";
+import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
-    const session = await getServerSession(authOptions)
+  try {
+    const session = await getServerSession(authOptions);
 
     if (!session) {
-        return new NextResponse(JSON.stringify({ error: 'unauthorized' }), {
-            status: 401
-        })
+      return new NextResponse(JSON.stringify({ error: "unauthorized" }), {
+        status: 401,
+      });
     }
 
-    console.log('POST API', session)
-    return NextResponse.json({ authenticated: !!session })
+    const { name, amount, monthId } = await request.json();
+    const month = await prisma.budget.create({
+      data: {
+        name,
+        slug: name.toLowerCase().replace(" ", "-") + "-" + monthId,
+        amount: +amount,
+        month: {
+          connect: {
+            id: monthId,
+          },
+        },
+      },
+    });
+
+    return NextResponse.json({
+      month,
+    });
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json({
+      error,
+    });
+  }
 }
