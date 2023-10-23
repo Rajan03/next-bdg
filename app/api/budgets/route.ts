@@ -31,7 +31,6 @@ export async function POST(request: Request) {
       month,
     });
   } catch (error) {
-    console.log(error);
     return NextResponse.json({
       error,
     });

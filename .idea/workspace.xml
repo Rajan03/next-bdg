@@ -5,18 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de30bf5b-6be8-4d72-8896-408db581c90e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/account/expenses-list/list-expesnses.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/actions/StopMonthAction.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/actions/UpdateIncomeAction.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/modals/UpdateIncomeModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/account/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/budgets/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/budgets/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/expenses/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/expenses/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/months/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/months/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/cards/budget-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/cards/budget-card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/modals/AddBudgetModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/AddBudgetModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/modals/AddExpenseModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/AddExpenseModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/modals/AddMonthModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/AddMonthModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/store-populator/budgets.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store-populator/budgets.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/context/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/account/expenses-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/account/expenses-list/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/actions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/actions/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/modals/LoginModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/LoginModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/modals/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/context/modals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/context/modals.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/seed.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/seed.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/budgets/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/budgets/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/expenses/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/expenses/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/months/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/months/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +59,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/rajan/extra/next-bdg/components/actions&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/personal/Projects/next-auth-with-prisma-main/components/actions&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -88,7 +94,8 @@
       <workItem from="1697626190642" duration="7367000" />
       <workItem from="1697635891641" duration="3433000" />
       <workItem from="1697987292815" duration="4517000" />
-      <workItem from="1698081527263" duration="4685000" />
+      <workItem from="1698081527263" duration="6517000" />
+      <workItem from="1698088060839" duration="1514000" />
     </task>
     <servers />
   </component>

@@ -35,7 +35,7 @@ export function AuthenticatedNavbar() {
         <>
             <nav className={'w-full fixed top-0 h-20 bg-white shadow-lg shadow-gray-100'}>
                 <div className={'h-full container mx-auto flex justify-between items-center px-6'}>
-                    <p className={"text-primary-700"}>App Name</p>
+                    <p className={"text-primary-700"}>Money Marvel</p>
                     <LogOutAction/>
                 </div>
             </nav>

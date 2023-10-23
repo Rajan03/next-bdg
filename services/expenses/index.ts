@@ -14,14 +14,12 @@ export async function GetMonthExpenses(): Promise<{
                 createdAt: "desc",
             }
         });
-        console.log(expenses);
 
         return {
             data: expenses,
             success: true,
         };
     } catch (error) {
-        console.log(error);
         return {
             data: [],
             success: false,

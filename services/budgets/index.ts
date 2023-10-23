@@ -20,14 +20,12 @@ export async function GetMonthBudgets(monthId: string): Promise<{
                 expenses: true,
             }
         });
-        console.log(budgets);
 
         return {
             data: budgets,
             success: true,
         };
     } catch (error) {
-        console.log(error);
         return {
             data: [],
             success: false,

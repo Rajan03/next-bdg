@@ -27,7 +27,6 @@ export async function POST(request: Request) {
 
         return NextResponse.json({expense});
     } catch (error) {
-        console.log(error);
         return NextResponse.json({
             error,
         });

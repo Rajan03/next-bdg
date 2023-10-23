@@ -23,8 +23,8 @@ export function LoginModal() {
                 email, password,
                 redirect: true, callbackUrl: '/account'
             });
-        } catch (e) {
-            console.log(e)
+        } catch (e: any) {
+            alert(e.message)
         } finally {
             setLoading(false)
         }

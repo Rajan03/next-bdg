@@ -54,3 +54,11 @@ export async function GetActiveMonth() {
         data: activeMonth
     };
 }
+
+export async function StopMonth() {
+    const month = await fetch("/api/months", {
+        method: "DELETE"
+    });
+
+    return(await month.json());
+}

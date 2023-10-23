@@ -24,3 +24,9 @@ export const useAddExpenseModal = create<ModalState>((set) => ({
     open: () => set({isOpen: true}),
     close: () => set({isOpen: false})
 }));
+
+export const useUpdateIncomeModal = create<ModalState>((set) => ({
+    isOpen: false,
+    open: () => set({isOpen: true}),
+    close: () => set({isOpen: false})
+}));

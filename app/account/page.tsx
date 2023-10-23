@@ -1,9 +1,10 @@
 import {GetActiveMonth} from "@/services";
-import {ActiveMonth, AddMonthAction} from "@/components";
+import {ActiveMonth, AddMonthAction, StopMonthAction} from "@/components";
 import {monthsPairs} from "@lib/constants";
 import {getServerSession} from "next-auth/next";
 import {authOptions} from "@lib/authOptions";
 import {BudgetList, ExpensesList} from "@/modules";
+import {UpdateIncomeAction} from "@components/actions/UpdateIncomeAction";
 
 export default async function Dashboard() {
     const session = await getServerSession(authOptions)
@@ -17,6 +18,7 @@ export default async function Dashboard() {
     }
 
     const currentMonth = await GetActiveMonth();
+    console.log(currentMonth)
     if (!currentMonth || !currentMonth.data || currentMonth.error) {
         return (
             <section className={'h-full flex justify-center items-center flex-col'}>
@@ -28,6 +30,7 @@ export default async function Dashboard() {
     }
 
     const month = monthsPairs.find((month) => month.value === +currentMonth.data.monthName) as LabelValue;
+
     return (
         <>
             <ActiveMonth {...currentMonth.data} />
@@ -45,19 +48,13 @@ export default async function Dashboard() {
                 <div className={'grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4 w-full mt-8'}>
                     {/* Month Card */}
                     <CardUI title={'Active Month - ' + month.label} description={'This is your active month'}>
-                        <button
-                            className={'bg-primary-700 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-6'}>
-                            Stop this month
-                        </button>
+                        <StopMonthAction />
                     </CardUI>
 
                     {/* Income Card */}
                     <CardUI title={'Income - ' + currentMonth.data.currency + currentMonth.data.income}
                             description={'This is your active month income available for expenses'}>
-                        <button
-                            className={'bg-primary-700 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-6'}>
-                            Update income
-                        </button>
+                        <UpdateIncomeAction />
                     </CardUI>
 
                     {/* Expense Available Card */}
@@ -81,7 +78,7 @@ export default async function Dashboard() {
 function CardUI({title, description, children}: { title: string, description: string, children?: React.ReactNode }) {
     return (
         <div
-            className={'bg-white p-3 shadow-lg border border-gray-100 rounded-lg flex flex-col justify-start gap-y-1 w-full'}>
+            className={'bg-white p-3 shadow-lg border border-gray-100 rounded-lg flex flex-col justify-start gap-y-3 w-full'}>
             <div className={'flex-1 flex flex-col justify-star gap-y-2'}>
                 <h2 className={'text-xl font-bold'}>
                     {title}
