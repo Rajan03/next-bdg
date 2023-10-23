@@ -69,7 +69,7 @@ export default async function Dashboard() {
                             description={'Planned budgets for this month'}/>
                 </div>
 
-                <div className={'flex-1 grid grid-cols-2 lg:grid-cols-3 gap-4 w-full mt-8'}>
+                <div className={'flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mt-8'}>
                     <BudgetList monthId={currentMonth.data.id}/>
                     <ExpensesList />
                 </div>

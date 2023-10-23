@@ -1,7 +1,7 @@
 'use client';
 
 import {Prisma} from ".prisma/client";
-import {useActiveMonth} from "@/context";
+import {useActiveMonth, useMonthBudgets} from "@/context";
 
 type Budget = Prisma.BudgetGetPayload<{
     include: {
@@ -12,11 +12,9 @@ type Budget = Prisma.BudgetGetPayload<{
 export function BudgetCard(props: Budget) {
     const {name, amount, expenses} = props;
     const currency = useActiveMonth(m => m.activeMonth?.currency) || '';
+    const {budgets, setBudgets} = useMonthBudgets(m => ({budgets: m.monthBudgets, setBudgets: m.setMonthBudgets}));
 
-    // Calculate remaining amount
-    const remaining = expenses.reduce((acc, expense) => {
-        return acc - expense.amount;
-    }, amount);
+
 
     // Calculate spent amount
     const spent = expenses.reduce((acc, expense) => {
@@ -26,8 +24,20 @@ export function BudgetCard(props: Budget) {
     // Calculate percentage
     const percentage = (spent / amount) * 100;
 
+    // Set selected budget
+    const setSelectedCard = () => {
+       setBudgets(budgets.map(b => {
+           if (b.id === props.id) {
+               localStorage.setItem('budgetId', b.id);
+           }
+           return {
+               ...b,
+               selected: b.id === props.id
+           }
+       }));
+    }
     return (
-        <div className={'flex flex-col bg-red-30s0 p-4 rounded-lg shadow'}>
+        <div onClick={setSelectedCard} className={'flex flex-col bg-red-30s0 p-4 rounded-lg shadow'}>
             {/* Title and Amount */}
             <div className={'flex flex-row justify-between items-center'}>
                 <h3 className={'text-lg font-bold'}>{name}</h3>

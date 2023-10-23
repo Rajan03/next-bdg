@@ -3,10 +3,12 @@
 import { AppModal } from "./RootModal";
 import {useMonthBudgets, useAddExpenseModal} from "@/context";
 import React from "react";
+import {useRouter} from "next/navigation";
 
 export function AddExpenseModal() {
     const { isOpen, close } = useAddExpenseModal();
     const { monthBudgets } = useMonthBudgets();
+    const router = useRouter()
     const [loading, setLoading] = React.useState(false);
 
     const budgetNameRef = React.useRef<HTMLSelectElement>(null);
@@ -30,6 +32,7 @@ export function AddExpenseModal() {
         });
 
         setLoading(false)
+        router.refresh();
         close()
     }
 

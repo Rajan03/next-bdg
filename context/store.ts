@@ -1,6 +1,11 @@
 import {create} from "zustand";
-import type {Budget, Month} from ".prisma/client";
+import type {Prisma, Month} from ".prisma/client";
 
+type Budget = Prisma.BudgetGetPayload<{
+    include: {
+        expenses: true;
+    }
+}> & { selected?: boolean };
 
 interface ActiveMonthStore {
     activeMonth: Month | null;

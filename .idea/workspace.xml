@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de30bf5b-6be8-4d72-8896-408db581c90e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/api/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/account/expenses-list/list-expesnses.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/account/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/cards/budget-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/cards/budget-card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/modals/AddBudgetModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/AddBudgetModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/modals/AddExpenseModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/AddExpenseModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/modals/AddMonthModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/AddMonthModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/store-populator/budgets.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/store-populator/budgets.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/context/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/context/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/account/expenses-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/account/expenses-list/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -36,28 +47,31 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/rajan/extra/next-bdg/components/actions",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
-    "ts.external.directory.path": "/Users/personal/Projects/next-auth-with-prisma-main/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/rajan/extra/next-bdg/components/actions&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/personal/Projects/next-auth-with-prisma-main/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/components/actions" />
       <recent name="$PROJECT_DIR$/components/modals" />
       <recent name="$PROJECT_DIR$/app/api/expenses" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/account/expenses-list" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -74,6 +88,7 @@
       <workItem from="1697626190642" duration="7367000" />
       <workItem from="1697635891641" duration="3433000" />
       <workItem from="1697987292815" duration="4517000" />
+      <workItem from="1698081527263" duration="4685000" />
     </task>
     <servers />
   </component>

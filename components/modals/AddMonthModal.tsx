@@ -4,9 +4,11 @@ import {AppModal} from "./RootModal";
 import {useAddMonthModal} from "@/context";
 import React from "react";
 import {monthsPairs, yearPairs} from "@lib/constants";
+import {useRouter} from "next/navigation";
 
 export function AddMonthModal() {
     const {isOpen, close} = useAddMonthModal();
+    const router = useRouter();
     const [loading, setLoading] = React.useState(false);
 
     const monthNameRef = React.useRef<HTMLSelectElement>(null);
@@ -42,7 +44,8 @@ export function AddMonthModal() {
             headers: { 'Content-Type': 'application/json' },
         });
 
-        setLoading(false)
+        setLoading(false);
+        router.refresh();
         close()
     }
 
