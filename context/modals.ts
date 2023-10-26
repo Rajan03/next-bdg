@@ -30,3 +30,15 @@ export const useUpdateIncomeModal = create<ModalState>((set) => ({
     open: () => set({isOpen: true}),
     close: () => set({isOpen: false})
 }));
+
+interface UpdateModalState extends ModalState {
+    data: any
+    openWithData: (data: any) => void
+}
+export const useUpdateExpenseModal = create<UpdateModalState>((set) => ({
+    isOpen: false,
+    data: null,
+    openWithData: (data) => set({isOpen: true, data}),
+    open: () => set({isOpen: true}),
+    close: () => set({isOpen: false})
+}));

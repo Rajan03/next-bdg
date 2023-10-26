@@ -45,19 +45,21 @@ export function BudgetCard(props: Budget) {
             </div>
 
             {/* Spent and Remaining Label */}
-            <div className={'flex flex-row justify-between items-center mt-3'}>
-                <p className={'text-base text-gray-400'}>Spent</p>
-                <p className={'text-base text-gray-400'}>Remaining</p>
+            <div className={'flex flex-row justify-between items-center mt-2'}>
+                <p className={'text-sm text-gray-400'}>Spent</p>
+                <p className={'text-sm text-gray-400'}>Remaining</p>
             </div>
 
             {/* Slider */}
             <div className={'flex flex-row justify-between items-center mt-1'}>
                 <div className={'flex-1'}>
-                    <div className={'h-2 bg-gray-200 rounded-full'}>
-                        <div className={'h-2 bg-primary-700 rounded-full'}
+                    <div className={'h-1 bg-gray-200 rounded-full overflow-hidden'}>
+                        <div className={`h-1 rounded-full ${percentage > 100 ? 'bg-red-600': 'bg-primary-600'}`}
                              style={{width: `${percentage || '1'}%`}} />
                     </div>
-                    <p className={'text-sm text-gray-400 mt-1'}>{percentage.toFixed(2)}%</p>
+                    <p className={`text-sm text-gray-400 mt-1 ${percentage > 100 ? 'text-red-600': ''}`}>
+                        {percentage.toFixed(2)}%
+                    </p>
                 </div>
             </div>
         </div>
