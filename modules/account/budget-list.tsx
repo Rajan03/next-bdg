@@ -5,11 +5,14 @@ import {AiOutlinePlus} from "react-icons/ai";
 export async function BudgetList({monthId}: { monthId: string }) {
     const budgets = await GetMonthBudgets(monthId);
 
+    const total = budgets.data.reduce((acc, budget) => acc + budget.amount, 0);
     return (
         <div className={'flex flex-col gap-y-3 bg-white shadow-lg p-4 rounded-md'}>
             <PopulateBudgets budgets={budgets.data} />
             <div className={'flex flex-row justify-between items-center border-b pb-2'}>
-                <h2 className={'text-lg font-bold'}>Budgets</h2>
+                <h2 className={'text-lg font-bold'}>
+                    Budgets - {total}
+                </h2>
                 <AddBudgetAction>
                     <button className={'text-primary-700 hover:bg-primary-50 font-bold p-1 rounded'}>
                         <AiOutlinePlus size={20} />

@@ -14,7 +14,10 @@ export function BudgetCard(props: Budget) {
     const currency = useActiveMonth(m => m.activeMonth?.currency) || '';
     const {budgets, setBudgets} = useMonthBudgets(m => ({budgets: m.monthBudgets, setBudgets: m.setMonthBudgets}));
 
-
+    // Calculate remaining amount
+    const remaining = amount - expenses.reduce((acc, expense) => {
+        return acc + expense.amount > amount ? amount : acc + expense.amount;
+    }, 0);
 
     // Calculate spent amount
     const spent = expenses.reduce((acc, expense) => {
@@ -37,7 +40,8 @@ export function BudgetCard(props: Budget) {
        }));
     }
     return (
-        <div onClick={setSelectedCard} className={'flex flex-col bg-red-30s0 p-4 rounded-lg shadow'}>
+        <div onClick={setSelectedCard}
+             className={`flex flex-col bg-red-30s0 p-4 rounded-lg shadow border ${percentage > 100 ? 'border-red-200' : 'border-gray-50'}`}>
             {/* Title and Amount */}
             <div className={'flex flex-row justify-between items-center'}>
                 <h3 className={'text-lg font-bold'}>{name}</h3>
@@ -46,8 +50,12 @@ export function BudgetCard(props: Budget) {
 
             {/* Spent and Remaining Label */}
             <div className={'flex flex-row justify-between items-center mt-2'}>
-                <p className={'text-sm text-gray-400'}>Spent</p>
-                <p className={'text-sm text-gray-400'}>Remaining</p>
+                <p className={'text-sm text-gray-400'}>
+                    Spent - {currency + spent}
+                </p>
+                <p className={'text-sm text-gray-400'}>
+                    Remaining - {currency + remaining}
+                </p>
             </div>
 
             {/* Slider */}
@@ -57,9 +65,15 @@ export function BudgetCard(props: Budget) {
                         <div className={`h-1 rounded-full ${percentage > 100 ? 'bg-red-600': 'bg-primary-600'}`}
                              style={{width: `${percentage || '1'}%`}} />
                     </div>
-                    <p className={`text-sm text-gray-400 mt-1 ${percentage > 100 ? 'text-red-600': ''}`}>
-                        {percentage.toFixed(2)}%
-                    </p>
+
+                    <div className={'flex flex-row justify-between items-center mt-1'}>
+                        <p className={`text-xs text-gray-400 mt-1 ${percentage > 100 ? 'text-red-600': ''}`}>
+                            {percentage.toFixed(2)}%
+                        </p>
+                        <p className={`text-xs text-gray-400 mt-1 ${percentage > 100 ? 'text-red-600': ''}`}>
+                            Over budget
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
