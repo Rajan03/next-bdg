@@ -18,6 +18,9 @@ export async function GetMonthBudgets(monthId: string): Promise<{
             },
             include: {
                 expenses: true,
+            },
+            orderBy: {
+                amount: 'desc'
             }
         });
 

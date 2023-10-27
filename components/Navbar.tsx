@@ -18,7 +18,7 @@ export async function Navbar() {
 
 export function UnAuthenticatedNavbar() {
     return (
-        <nav className={'w-full fixed top-0 h-20 bg-white shadow-lg shadow-gray-100'}>
+        <nav className={'w-full fixed top-0 h-20 bg-white shadow-lg shadow-gray-100 z-50'}>
             <div className={'h-full container mx-auto flex justify-between items-center px-6'}>
                 <p className={"text-primary-700"}>
                     Money Marvel
@@ -33,7 +33,7 @@ export function UnAuthenticatedNavbar() {
 export function AuthenticatedNavbar() {
     return (
         <>
-            <nav className={'w-full fixed top-0 h-20 bg-white shadow-lg shadow-gray-100'}>
+            <nav className={'w-full fixed top-0 h-20 bg-white shadow-lg shadow-gray-100 z-50'}>
                 <div className={'h-full container mx-auto flex justify-between items-center px-6'}>
                     <p className={"text-primary-700"}>Money Marvel</p>
                     <LogOutAction/>

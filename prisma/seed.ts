@@ -4,21 +4,21 @@ import { hash } from 'bcrypt'
 const prisma = new PrismaClient()
 
 async function main() {
-  const password = await hash('test', 12)
+  const password = await hash('test@1234', 12)
   const user = await prisma.user.upsert({
-    where: { email: 'test@test.com' },
+    where: { email: 'rajanverma5410@gmail.com' },
     update: {},
     create: {
-      email: 'test@test.com',
-      name: 'Test User',
+      email: 'rajanverma5410@gmail.com',
+      name: 'Rajan Verma',
       password
     }
   })
 }
 main()
-  .then(() => prisma.$disconnect())
-  .catch(async (e) => {
-    console.error(e)
-    await prisma.$disconnect()
-    process.exit(1)
+  .then(() => console.log('Seeded successfully'))
+  .catch((e) =>  console.error(e))
+  .finally(async() => {
+     await prisma.$disconnect();
+     process.exit(1)
   })

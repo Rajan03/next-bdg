@@ -1,7 +1,8 @@
 'use client';
 
 import {Prisma} from ".prisma/client";
-import {useActiveMonth, useMonthBudgets} from "@/context";
+import {useActiveMonth} from "@/context";
+import {useRouter, useSearchParams} from "next/navigation";
 
 type Budget = Prisma.BudgetGetPayload<{
     include: {
@@ -12,7 +13,8 @@ type Budget = Prisma.BudgetGetPayload<{
 export function BudgetCard(props: Budget) {
     const {name, amount, expenses} = props;
     const currency = useActiveMonth(m => m.activeMonth?.currency) || '';
-    const {budgets, setBudgets} = useMonthBudgets(m => ({budgets: m.monthBudgets, setBudgets: m.setMonthBudgets}));
+    const params = useSearchParams();
+    const {push} = useRouter();
 
     // Calculate remaining amount
     const remaining = amount - expenses.reduce((acc, expense) => {
@@ -29,19 +31,14 @@ export function BudgetCard(props: Budget) {
 
     // Set selected budget
     const setSelectedCard = () => {
-       setBudgets(budgets.map(b => {
-           if (b.id === props.id) {
-               localStorage.setItem('budgetId', b.id);
-           }
-           return {
-               ...b,
-               selected: b.id === props.id
-           }
-       }));
+        const searchParams = new URLSearchParams(params.toString());
+        searchParams.set('budget', props.id);
+        push(`?${searchParams.toString()}`);
     }
+
     return (
-        <div onClick={setSelectedCard}
-             className={`flex flex-col bg-red-30s0 p-4 rounded-lg shadow border ${percentage > 100 ? 'border-red-200' : 'border-gray-50'}`}>
+        <div onClick={setSelectedCard} className={`flex flex-col bg-red-30s0 p-4 rounded-lg shadow cursor-pointer border 
+             ${percentage > 100 ? 'border-red-200 hover:bg-red-50' : 'border-gray-100 hover:bg-gray-50'}`}>
             {/* Title and Amount */}
             <div className={'flex flex-row justify-between items-center'}>
                 <h3 className={'text-lg font-bold'}>{name}</h3>

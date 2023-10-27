@@ -1,12 +1,17 @@
-import {GetActiveMonth} from "@/services";
-import {ActiveMonth, AddMonthAction, StopMonthAction} from "@/components";
-import {monthsPairs} from "@lib/constants";
 import {getServerSession} from "next-auth/next";
+import {GetActiveMonth} from "@/services";
+import {monthsPairs} from "@lib/constants";
 import {authOptions} from "@lib/authOptions";
 import {BudgetList, ExpensesList} from "@/modules";
-import {UpdateIncomeAction} from "@components/actions/UpdateIncomeAction";
+import {ActiveMonth, AddMonthAction, StopMonthAction, UpdateIncomeAction} from "@/components";
+import {Suspense} from "react";
 
-export default async function Dashboard() {
+type Props = {
+    params: {};
+    searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export default async function Dashboard(props: Props) {
     const session = await getServerSession(authOptions)
     if (!session) {
         return (
@@ -18,7 +23,6 @@ export default async function Dashboard() {
     }
 
     const currentMonth = await GetActiveMonth();
-    console.log(currentMonth)
     if (!currentMonth || !currentMonth.data || currentMonth.error) {
         return (
             <section className={'h-full flex justify-center items-center flex-col'}>
@@ -45,7 +49,7 @@ export default async function Dashboard() {
                     <hr/>
                 </div>
 
-                <div className={'grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4 w-full mt-8'}>
+                <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full mt-8'}>
                     {/* Month Card */}
                     <CardUI title={'Active Month - ' + month.label} description={'This is your active month'}>
                         <StopMonthAction />
@@ -66,9 +70,14 @@ export default async function Dashboard() {
                             description={'Planned budgets for this month'}/>
                 </div>
 
-                <div className={'flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mt-8'}>
-                    <BudgetList monthId={currentMonth.data.id}/>
-                    <ExpensesList />
+                <div className={'flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full mt-8'}>
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <BudgetList monthId={currentMonth.data.id}/>
+                    </Suspense>
+
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <ExpensesList searchParams={props.searchParams}/>
+                    </Suspense>
                 </div>
             </section>
         </>
