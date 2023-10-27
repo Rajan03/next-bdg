@@ -1,6 +1,7 @@
 import {GetMonthBudgets} from "@/services";
-import {AddBudgetAction, BudgetCard, PopulateBudgets} from "@/components";
+import {AddBudgetAction, BudgetCard, PopulateBudgets, TwoHeading} from "@/components";
 import {AiOutlinePlus} from "react-icons/ai";
+import React from "react";
 
 export async function BudgetList({monthId}: { monthId: string }) {
     const budgets = await GetMonthBudgets(monthId);
@@ -13,14 +14,10 @@ export async function BudgetList({monthId}: { monthId: string }) {
         <div className={'flex flex-col bg-white shadow-lg rounded-md max-h-[60vh] overflow-hidden'}>
             <PopulateBudgets budgets={budgets.data}/>
             <div className={'flex flex-row justify-between items-center border-b p-4 pb-2'}>
-                <div className={'flex flex-col'}>
-                    <h2 className={'text-lg font-bold'}>
-                        Budgets
-                    </h2>
-                    <p className={'text-sm text-gray-400'}>
-                        {budgets.data.length} budgets - {total - expenses} remaining
-                    </p>
-                </div>
+                <TwoHeading
+                    length={budgets.data.length + ' budgets'} title={'Budgets'}
+                    subtitle={`${total - expenses} remaining`} withCurrency/>
+
                 <AddBudgetAction>
                     <button className={'text-primary-700 hover:bg-primary-50 font-bold p-1 rounded'}>
                         <AiOutlinePlus size={20}/>

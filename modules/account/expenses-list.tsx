@@ -1,5 +1,5 @@
 import React from "react";
-import {AddExpenseAction, ExpenseCard} from "@/components";
+import {AddExpenseAction, ExpenseCard, TwoHeading} from "@/components";
 import {AiOutlinePlus} from "react-icons/ai";
 import {GetMonthExpenses} from "@/services";
 import {Expense} from ".prisma/client";
@@ -20,14 +20,10 @@ export async function ExpensesList(props: Props) {
     return (
         <div className={'flex flex-col bg-white shadow-lg rounded-md max-h-[60vh] overflow-hidden'}>
             <div className={'flex flex-row justify-between items-center border-b p-4 pb-2'}>
-                <div className={'flex flex-col'}>
-                    <h2 className={'text-lg font-bold'}>
-                        Expenses
-                    </h2>
-                    <p className={'text-sm text-gray-400'}>
-                        {expenses && expenses.data ? expenses.data.length : 0} expenses - {totalExpense} spent
-                    </p>
-                </div>
+                <TwoHeading
+                    length={(expenses && expenses.data ? expenses.data.length : 0) + ' expenses'}
+                    title={'Expenses'} subtitle={`${totalExpense} Spent`} withCurrency/>
+
                 <AddExpenseAction>
                     <button className={'text-primary-700 hover:bg-primary-50 font-bold p-1 rounded'}>
                         <AiOutlinePlus size={20}/>

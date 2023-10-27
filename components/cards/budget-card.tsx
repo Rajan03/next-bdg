@@ -14,7 +14,7 @@ export function BudgetCard(props: Budget) {
     const {name, amount, expenses} = props;
     const currency = useActiveMonth(m => m.activeMonth?.currency) || '';
     const params = useSearchParams();
-    const {push} = useRouter();
+    const {replace} = useRouter();
 
     // Calculate remaining amount
     const remaining = amount - expenses.reduce((acc, expense) => {
@@ -33,7 +33,7 @@ export function BudgetCard(props: Budget) {
     const setSelectedCard = () => {
         const searchParams = new URLSearchParams(params.toString());
         searchParams.set('budget', props.id);
-        push(`?${searchParams.toString()}`);
+        replace(`?${searchParams.toString()}`);
     }
 
     return (

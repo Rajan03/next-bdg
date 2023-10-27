@@ -33,12 +33,12 @@ export default async function Dashboard(props: Props) {
         )
     }
 
-    const month = monthsPairs.find((month) => month.value === +currentMonth.data.monthName) as LabelValue;
+    const month = monthsPairs.find(month => month.value === +currentMonth.data.monthName) as LabelValue;
 
     return (
         <>
             <ActiveMonth {...currentMonth.data} />
-            <section className={'h-full flex justify-start items-start flex-col py-4'}>
+            <section className={'flex-1 flex justify-start items-start flex-col py-4'}>
                 <div className={'flex flex-col justify-start gap-y-1 w-full'}>
                     <h2 className={'text-2xl font-bold'}>
                         Hello {session.user.name}!
@@ -52,13 +52,13 @@ export default async function Dashboard(props: Props) {
                 <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full mt-8'}>
                     {/* Month Card */}
                     <CardUI title={'Active Month - ' + month.label} description={'This is your active month'}>
-                        <StopMonthAction />
+                        <StopMonthAction/>
                     </CardUI>
 
                     {/* Income Card */}
                     <CardUI title={'Income - ' + currentMonth.data.currency + currentMonth.data.income}
                             description={'This is your active month income available for expenses'}>
-                        <UpdateIncomeAction />
+                        <UpdateIncomeAction/>
                     </CardUI>
 
                     {/* Expense Available Card */}
@@ -70,14 +70,10 @@ export default async function Dashboard(props: Props) {
                             description={'Planned budgets for this month'}/>
                 </div>
 
-                <div className={'flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full mt-8'}>
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <BudgetList monthId={currentMonth.data.id}/>
-                    </Suspense>
-
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <ExpensesList searchParams={props.searchParams}/>
-                    </Suspense>
+                <div
+                    className={'flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full mt-8'}>
+                    <BudgetList monthId={currentMonth.data.id}/>
+                    <ExpensesList searchParams={props.searchParams}/>
                 </div>
             </section>
         </>
