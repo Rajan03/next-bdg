@@ -36,6 +36,9 @@ export default async function Dashboard(props: Props) {
 
     const month = monthsPairs.find(month => month.value === +currentMonth.data.monthName) as LabelValue;
 
+    const plannedBudgetAmount = currentMonth.data.budgets.reduce((acc, budget) => acc + budget.amount, 0);
+    const isOverBudget = plannedBudgetAmount > currentMonth.data.expenseLimit;
+
     return (
         <>
             <ActiveMonth {...currentMonth.data} />
@@ -50,14 +53,14 @@ export default async function Dashboard(props: Props) {
                         </p>
                     </div>
 
-                    <div className={'flex flex-col justify-start gap-1'}>
+                    {recentExpense && recentExpense.data && <div className={'flex flex-col justify-start gap-1'}>
                         <h2 className={'text-sm font-bold'}>
                             Recent Expense - {currentMonth.data.currency + recentExpense.data?.amount}
                         </h2>
                         <p className={'text-sm text-gray-400'}>
                             {recentExpense.data?.name} {recentExpense.data?.createdAt.toDateString()}
                         </p>
-                    </div>
+                    </div>}
                 </div>
 
                 <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full mt-8'}>
@@ -78,7 +81,18 @@ export default async function Dashboard(props: Props) {
 
                     {/* Budgets Card */}
                     <CardUI title={currentMonth.data.budgets?.length + ' Budgets Planned'}
-                            description={'Planned budgets for this month'}/>
+                            description={'Planned budgets for this month'}>
+                        <div className={'flex justify-start gap-2'}>
+                            <p className={isOverBudget ? 'text-sm text-red-400' :'text-sm text-gray-400'}>
+                                {currentMonth.data.currency + plannedBudgetAmount} / {currentMonth.data.currency + currentMonth.data.expenseLimit}
+                            </p>
+                            {isOverBudget && (
+                                <p className={'text-sm text-red-400'}>
+                                    You are over budget!
+                                </p>
+                            )}
+                        </div>
+                    </CardUI>
                 </div>
 
                 <div
