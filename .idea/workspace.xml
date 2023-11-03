@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de30bf5b-6be8-4d72-8896-408db581c90e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/diet/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/headers/TwoHeading.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/headers/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/app_logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/account/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/cards/budget-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/cards/budget-card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/account/budget-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/account/budget-list.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/account/expenses-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/account/expenses-list.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/expenses/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/expenses/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,23 +38,31 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/rajan/extra/next-bdg/public",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
-    "ts.external.directory.path": "/Users/rajan/extra/next-bdg/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/rajan/extra/next-bdg/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/rajan/extra/next-bdg/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.rcb.reactComponents" value="false" />
+        <entry key="com.haulmont.rcb.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
@@ -91,7 +91,8 @@
       <workItem from="1697987292815" duration="4517000" />
       <workItem from="1698081527263" duration="6517000" />
       <workItem from="1698088060839" duration="1514000" />
-      <workItem from="1698405423270" duration="11509000" />
+      <workItem from="1698405423270" duration="12751000" />
+      <workItem from="1699019988382" duration="1522000" />
     </task>
     <servers />
   </component>
