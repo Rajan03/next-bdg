@@ -23,7 +23,7 @@ export async function POST(request: Request) {
         const newMonth = await prisma.month.create({
             data: {
                 monthName: month,
-                slug: `${month}-${year}`,
+                slug: `${month}-${year}-${session.user?.id}`,
                 currency,
                 year: +year,
                 current: true,
