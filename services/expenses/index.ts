@@ -40,8 +40,8 @@ export async function GetMonthExpenses(budgetId: string): Promise<{
     }
 }
 
-export async function GetMostRecentExpenseFromMonth(month: string): Promise<{
-    data: Expense | null;
+export async function GetTotalExpend(monthId: string): Promise<{
+    data: number | null;
     error: string | null;
 }> {
     try {
@@ -53,37 +53,32 @@ export async function GetMostRecentExpenseFromMonth(month: string): Promise<{
             }
         }
 
-        const monthExpenses = await prisma.month.findFirst({
+        const budgets = await prisma.budget.findMany({
             where: {
-                id: month,
+                monthId: monthId,
             },
             include: {
-                budgets: {
-                    include: {
-                        expenses: {
-                            orderBy: {
-                                createdAt: "desc",
-                            },
-                            take: 1,
-                        }
-                    },
-                }
+                expenses: true,
             }
-        })
-        if (!monthExpenses || !monthExpenses.budgets?.length || !monthExpenses.budgets[0].expenses?.length) {
+        });
+
+        if (!budgets || budgets.length === 0) {
             return {
-                data: null,
-                error: "No expenses found for this month."
-            }
+                data: 0,
+                error: null,
+            };
         }
 
+        let total = 0;
+        budgets.forEach(b => b.expenses.forEach(expense => total += expense.amount))
+
         return {
-            data: monthExpenses.budgets[0].expenses[0],
+            data: total,
             error: null,
         };
     } catch (error: any) {
         return {
-            data: null,
+            data: 0,
             error: error.message || 'An error occurred while fetching the expenses.'
         };
     }
